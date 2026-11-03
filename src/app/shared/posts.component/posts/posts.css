@@ -1,0 +1,169 @@
+/* Dropdown container */
+.post-options-container {
+position: relative;
+display: inline-flex;
+align-items: center;
+}
+
+/* Three dots button */
+.post-options-button {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 36px;
+height: 36px;
+border: none;
+border-radius: 50%;
+background: transparent;
+color: #64748b;
+cursor: pointer;
+transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.post-options-button:hover {
+background-color: #f1f5f9;
+color: #334155;
+}
+
+.post-options-button i {
+font-size: 19px;
+}
+
+/* Dropdown box */
+.post-options-dropdown {
+position: absolute;
+top: calc(100% + 8px);
+right: 0;
+z-index: 1000;
+width: 200px;
+padding: 6px;
+background-color: #ffffff;
+border: 1px solid #e2e8f0;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+animation: postDropdownShow 0.18s ease-out;
+box-sizing: border-box;
+}
+
+/* Dropdown list */
+.post-options-dropdown ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.post-options-dropdown li {
+margin: 2px 0;
+}
+
+/* Dropdown items */
+.post-options-dropdown li a {
+display: flex;
+align-items: center;
+gap: 10px;
+width: 100%;
+padding: 11px 12px;
+border-radius: 8px;
+color: #334155;
+font-size: 14px;
+font-weight: 500;
+text-decoration: none;
+cursor: pointer;
+box-sizing: border-box;
+transition:
+background-color 0.2s ease,
+color 0.2s ease,
+transform 0.2s ease;
+}
+
+/* Icons */
+.post-options-dropdown li a svg {
+flex-shrink: 0;
+color: #64748b;
+transition: color 0.2s ease;
+}
+
+/* Hover effect */
+.post-options-dropdown li a:hover {
+background-color: #f1f5f9;
+color: #0f172a;
+}
+
+.post-options-dropdown li a:hover svg {
+color: #334155;
+}
+
+/* Delete option */
+.post-options-dropdown li a.delete-option {
+color: #dc2626;
+}
+
+.post-options-dropdown li a.delete-option svg {
+color: #dc2626;
+}
+
+.post-options-dropdown li a.delete-option:hover {
+background-color: #fef2f2;
+color: #b91c1c;
+}
+
+.post-options-dropdown li a.delete-option:hover svg {
+color: #b91c1c;
+}
+
+/* Dropdown animation */
+@keyframes postDropdownShow {
+from {
+opacity: 0;
+transform: translateY(-6px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Accessibility: keyboard focus */
+.post-options-button:focus-visible,
+.post-options-dropdown li a:focus-visible {
+outline: 2px solid #64748b;
+outline-offset: 2px;
+}
+.delete-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.delete-option svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.delete-option:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.delete-option:hover svg {
+  transform: scale(1.1);
+}
+
+.delete-option:active {
+  transform: scale(0.98);
+}
+
+.delete-option span {
+  line-height: 1;
+}

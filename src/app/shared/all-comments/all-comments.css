@@ -1,0 +1,49 @@
+/* ```css
+:host {
+  display: block;
+  width: 100%;
+}
+
+.comments-container {
+  width: 100%;
+  padding: 8px 0;
+}
+
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.comment-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-content {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  background: #f1f5f9;
+  border-radius: 14px;
+}
+
+.comment-content h4 {
+  margin: 0 0 5px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.comment-content p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+``` */

@@ -1,0 +1,68 @@
+<div class="bg-white mb-5 rounded-2xl shadow-sm p-4 space-y-4">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-gray-300">
+      <img [src]="userData().photo" alt="" />
+    </div>
+    <div>
+      <p class="font-semibold">{{ userData().name }}</p>
+      <div class="flex items-center gap-2 text-xs text-gray-500">
+        <span>Public</span>
+
+        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+      </div>
+    </div>
+  </div>
+  <!-- [(ngModel)]="postContent -->
+  <textarea
+    [(ngModel)]="postContent"
+    placeholder="What's on your mind, {{ userData.name }}?"
+    class="w-full bg-gray-100 rounded-xl resize-none focus:outline-none"
+  >
+  </textarea>
+  @if (imagePaht) {
+    <div class="image-preview">
+      <img [src]="imagePaht" alt="Post Image Preview" />
+
+      <button type="button" (click)="deleteImage()" class="delete-image-btn">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+  }
+
+  <div class="flex items-center justify-between">
+    <div class="flex gap-6 text-sm text-gray-600">
+      <!-- Hidden File Input -->
+      <!-- (change)=""onFileSelected($event) -->
+      <input
+        #fileInput
+        type="file"
+        class="hidden"
+        accept="image/*,video/*"
+        (change)="test($event)"
+      />
+
+      <!-- Photo / Video Button -->
+      <button
+        type="button"
+        (click)="fileInput.click()"
+        class="flex items-center gap-2 hover:text-blue-600"
+      >
+        <i class="fa-regular fa-image"></i>
+        Photo/video
+      </button>
+
+      <!-- Feeling -->
+      <button class="flex items-center gap-2 hover:text-yellow-500">
+        <i class="fa-regular fa-face-smile"></i>
+        Feeling/activity
+      </button>
+    </div>
+    <button
+      (click)="createPost()"
+      [disabled]="checkbuttomupload()"
+      class="cursor-pointer px-5 py-1.5 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600"
+    >
+      Post
+    </button>
+  </div>
+</div>
